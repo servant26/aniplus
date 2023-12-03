@@ -7,7 +7,7 @@
     <div class="row g-4">
         @foreach($romance as $t)
             <div class="col-lg-3 col-md-4 col-6">
-            <a href="/isi/{{ $t->id }}" style="text-decoration: none">
+            <a href="/detail/{{ $t->id }}" style="text-decoration: none">
             <div class="card">
                 <img src="{{ $t->gambar }}" class="card-img-top" alt="Gambar">
                 <div class="card-body p-3">

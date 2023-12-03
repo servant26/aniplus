@@ -9,7 +9,7 @@
 <div class="row g-4">
     @foreach($type1 as $pw)
     <div class="col-lg-3 col-md-4 col-6">
-        <a href="/isi/{{ $pw->id }}" style="text-decoration: none">
+        <a href="/detail/{{ $pw->id }}" style="text-decoration: none">
             <div class="card">
                 <img src="{{ $pw->gambar }}" class="card-img-top" alt="Gambar">
                 <div class="card-body p-3">
@@ -27,7 +27,7 @@
 <div class="row g-4">
     @foreach($type2 as $pw)
     <div class="col-lg-3 col-md-4 col-6">
-        <a href="/isi/{{ $pw->id }}" style="text-decoration: none">
+        <a href="/detail/{{ $pw->id }}" style="text-decoration: none">
             <div class="card">
                 <img src="{{ $pw->gambar }}" class="card-img-top" alt="Gambar">
                 <div class="card-body p-4">

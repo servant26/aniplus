@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\GenreController;
-use App\Http\Controllers\IsiController;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\CariController;
 use App\Http\Controllers\StudioController;
 /*
@@ -57,7 +57,7 @@ Route::get('/whitefox', [StudioController::class, 'whitefox']);
 Route::get('/witstudio', [StudioController::class, 'witstudio']);
 
 //detail
-Route::get('/isi/{id}', [IsiController::class, 'isi']);
+Route::get('/detail/{id}', [DetailController::class, 'detail']);
 
 //cari
 Route::get('/cari', [CariController::class, 'cari']);
