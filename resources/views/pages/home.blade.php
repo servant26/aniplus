@@ -4,7 +4,7 @@
 <!-- Awal Card -->
 <div class="container mt-5 mb-5" id="card-materi">
 <!-- batch -->
-<div class="p-3 mb-4 rounded bg-dark text-white"><a class="btn btn-outline-light" href="/tv" role="button">Batch</a>
+<div class="p-3 mb-4 rounded bg-dark text-white"><a class="btn btn-outline-light" href="/type/tv" role="button">Batch</a>
 </div>
 <div class="row g-4">
     @foreach($type1 as $pw)
@@ -22,7 +22,7 @@
 </div>
 
 <!-- Movie -->
-<div class="p-3 mb-4 mt-5 rounded bg-dark text-white"><a class="btn btn-outline-light" href="/movie" role="button">Movie</a>
+<div class="p-3 mb-4 mt-5 rounded bg-dark text-white"><a class="btn btn-outline-light" href="/type/movie" role="button">Movie</a>
 </div>
 <div class="row g-4">
     @foreach($type2 as $pw)

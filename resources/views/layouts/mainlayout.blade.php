@@ -48,9 +48,9 @@
             Tipe
           </a>
           <ul class="dropdown-menu scrollable-menu">
-            <li><a class="dropdown-item" href="/tv">Batch</a></li>
+            <li><a class="dropdown-item" href="/type/tv">Batch</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/movie">Movie</a></li>
+            <li><a class="dropdown-item" href="/type/movie">Movie</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown mx-3">
@@ -58,27 +58,27 @@
             Genre
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/action">Action</a></li>
+            <li><a class="dropdown-item" href="/genre/action">Action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/adventure">Adventure</a></li>
+            <li><a class="dropdown-item" href="/genre/adventure">Adventure</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/comedy">Comedy</a></li>
+            <li><a class="dropdown-item" href="/genre/genrecomedy">Comedy</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/drama">Drama</a></li>
+            <li><a class="dropdown-item" href="/genre/genredrama">Drama</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/fantasy">Fantasy</a></li>
+            <li><a class="dropdown-item" href="/genre/fantasy">Fantasy</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/mystery">Mystery</a></li>
+            <li><a class="dropdown-item" href="/genre/mystery">Mystery</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/romance">Romance</a></li>
+            <li><a class="dropdown-item" href="/genre/romance">Romance</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/scifi">Sci-Fi</a></li>
+            <li><a class="dropdown-item" href="/genre/scifi">Sci-Fi</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/sol">Slice of Life</a></li>
+            <li><a class="dropdown-item" href="/genre/sol">Slice of Life</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/sports">Sports</a></li>
+            <li><a class="dropdown-item" href="/genre/sports">Sports</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/supernatural">Supernatural</a></li>
+            <li><a class="dropdown-item" href="/genre/supernatural">Supernatural</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown mx-3">
@@ -86,29 +86,47 @@
               Studio
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/a1pictures">A-1 Pictures</a></li>
+              <li><a class="dropdown-item" href="/studio/a1pictures">A-1 Pictures</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/bones">Bones</a></li>
+              <li><a class="dropdown-item" href="/studio/bones">Bones</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/comixwavefilms">CoMix Wave Films</a></li>
+              <li><a class="dropdown-item" href="/studio/comixwavefilms">CoMix Wave Films</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/davidproduction">David Production</a></li>
+              <li><a class="dropdown-item" href="/studio/davidproduction">David Production</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/kyotoanimation">Kyoto Animation</a></li>
+              <li><a class="dropdown-item" href="/studio/kyotoanimation">Kyoto Animation</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/madhouse">Madhouse</a></li>
+              <li><a class="dropdown-item" href="/studio/madhouse">Madhouse</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/mappa">Mappa</a></li>
+              <li><a class="dropdown-item" href="/studio/mappa">Mappa</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/productionig">Production I.G</a></li>
+              <li><a class="dropdown-item" href="/studio/productionig">Production I.G</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/studioghibli">Studio Ghibli</a></li>
+              <li><a class="dropdown-item" href="/studio/studioghibli">Studio Ghibli</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/ufotable">Ufotable</a></li>
+              <li><a class="dropdown-item" href="/studio/ufotable">Ufotable</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/whitefox">White Fox</a></li>
+              <li><a class="dropdown-item" href="/studio/whitefox">White Fox</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/witstudio">Wit Studio</a></li>
+              <li><a class="dropdown-item" href="/studio/witstudio">Wit Studio</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown mx-3">
+            <a class="nav-link dropdown-toggle {{ request()->is('23','20','15','10','04','90') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tahun
+            </a>
+            <ul class="dropdown-menu scrollable-menu">
+              <li><a class="dropdown-item" href="/tahun/23">2021-2023</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/tahun/20">2016-2020</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/tahun/15">2011-2015</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/tahun/10">2006-2010</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/tahun/04">2000-2005</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/tahun/90">90-an kebawah</a></li>
             </ul>
           </li>
       </ul>
