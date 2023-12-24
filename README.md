@@ -7,7 +7,7 @@
 6. Lihat opsi paling bawah, terdapat teks "Download ZIP", silahkan di download <br>
 7. Setelah selesai download, letakkan file zip ini kedalam XAMPP -> htdocs (jika kalian bingung dimana letak folder htdocs, tinggal klik kanan pada icon XAMPP saja lalu pilih opsi "Open file location" nanti dia akan langsung menuju ke folder XAMPP yang didalamnya ada folder htdocs <br>
 8. Ekstrak file zip tadi menggunakan "Extract here" oiya ekstraknya didalam folder htdocs yaa <br>
-9. Setelah berhasil diekstrak, akan muncul beberapa folder salah satunya adalah folder bernama db yang isinya terdapat file bernama aniplus.sql, file inilah yang akan kita import <br>
+9. Setelah berhasil diekstrak, akan muncul beberapa folder, salah satunya adalah folder bernama db yang isinya terdapat file bernama aniplus.sql, file inilah yang akan kita import ke database nanti<br>
 10. Buka lagi http://localhost/phpmyadmin lalu cari yang namanya "Import" (biasanya ada dibagian menu atas disebelah Export) <br>
 11. Setelah menekan tombol import, pilih telusuri lalu cari file aniplus.sql tadi (Ingat!! file aniplus.sql berada didalam folder bernama db) <br>
 12. Kemudian langsung klik tombol import saja <br>
