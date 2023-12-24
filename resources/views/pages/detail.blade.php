@@ -122,14 +122,19 @@
             <h5>Link Download :</h5>
             @php
                 $links = explode(', ', $t->link);
+                $totalLinks = count($links);
             @endphp
             
-            @foreach($links as $index => $link)
-                @php
-                    $part = $index + 1;
-                @endphp
-                <a class="btn btn-outline-primary btn-sm" href="{{ $link }}" role="button">Part {{ $part }} - 720 Google Drive</a>
-            @endforeach
+            @if($totalLinks > 1)
+                @foreach($links as $index => $link)
+                    @php
+                        $part = $index + 1;
+                    @endphp
+                    <a class="btn btn-outline-primary btn-sm mx-1 mb-3" href="{{ $link }}" target="_blank" role="button">Google Drive - Part {{ $part }}</a>
+                @endforeach
+            @else
+                <a class="btn btn-outline-primary btn-sm mx-1 mb-3" href="{{ $links[0] }}" target="_blank" role="button">Google Drive</a>
+            @endif            
         </div>
     @endforeach
     </div>
