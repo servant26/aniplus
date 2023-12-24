@@ -44,7 +44,7 @@
           <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">Home</a>
         </li>
         <li class="nav-item dropdown mx-3">
-          <a class="nav-link dropdown-toggle {{ request()->is('tv','movie') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle {{ request()->is('type/tv','type/movie') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Tipe
           </a>
           <ul class="dropdown-menu scrollable-menu">
@@ -54,7 +54,7 @@
           </ul>
         </li>
         <li class="nav-item dropdown mx-3">
-          <a class="nav-link dropdown-toggle {{ request()->is('action','adventure','comedy','drama','fantasy','mystery','romance','scifi','sol','sports','supernatural') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle {{ request()->is('genre/action','genre/adventure','genre/comedy','genre/drama','genre/fantasy','genre/mystery','genre/romance','genre/scifi','genre/sol','genre/sports','genre/supernatural') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Genre
           </a>
           <ul class="dropdown-menu">
@@ -62,9 +62,9 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/genre/adventure">Adventure</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/genre/genrecomedy">Comedy</a></li>
+            <li><a class="dropdown-item" href="/genre/comedy">Comedy</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/genre/genredrama">Drama</a></li>
+            <li><a class="dropdown-item" href="/genre/drama">Drama</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/genre/fantasy">Fantasy</a></li>
             <li><hr class="dropdown-divider"></li>
@@ -82,7 +82,7 @@
           </ul>
         </li>
         <li class="nav-item dropdown mx-3">
-          <a class="nav-link dropdown-toggle {{ request()->is('a1pictures','bones','comixwavefilms','davidproduction','kyotoanimation','madhouse','mappa','productionig','studioghibli','ufotable','whitefox','witstudio') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle {{ request()->is('studio/a1pictures','studio/bones','studio/comixwavefilms','studio/davidproduction','studio/kyotoanimation','studio/madhouse','studio/mappa','studio/productionig','studio/studioghibli','studio/ufotable','studio/whitefox','studio/witstudio') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Studio
             </a>
             <ul class="dropdown-menu">
@@ -112,7 +112,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown mx-3">
-            <a class="nav-link dropdown-toggle {{ request()->is('23','20','15','10','04','90') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle {{ request()->is('tahun/23','tahun/20','tahun/15','tahun/10','tahun/04','tahun/90') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Tahun
             </a>
             <ul class="dropdown-menu scrollable-menu">

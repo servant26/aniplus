@@ -119,9 +119,18 @@
             paling populer dan diakui dalam industri hiburan Jepang maupun di seluruh dunia. Kehadirannya telah
             menginspirasi banyak orang dan menciptakan ikon-ikon tak terlupakan, menjadikannya sebagai salah satu karya
             paling berpengaruh dalam sejarah dunia animasi.</p><br>
-        <h5>Link Download :</h5> 
-        <a class="btn btn-outline-primary btn-sm" href="#" role="button">720 Google Drive</a>
-        </div>    
+            <h5>Link Download :</h5>
+            @php
+                $links = explode(', ', $t->link);
+            @endphp
+            
+            @foreach($links as $index => $link)
+                @php
+                    $part = $index + 1;
+                @endphp
+                <a class="btn btn-outline-primary btn-sm" href="{{ $link }}" role="button">Part {{ $part }} - 720 Google Drive</a>
+            @endforeach
+        </div>
     @endforeach
     </div>
 </div>

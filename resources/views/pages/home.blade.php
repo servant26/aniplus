@@ -11,7 +11,7 @@
     <div class="col-lg-3 col-md-4 col-6">
         <a href="/detail/{{ $pw->id }}" style="text-decoration: none">
             <div class="card">
-                <img src="{{ $pw->gambar }}" class="card-img-top" alt="Gambar">
+                <img src="{{ $pw->gambar }}" class="card-img-top" alt="{{ $pw->judul }}">
                 <div class="card-body p-3">
                     <h6 class="card-title">{{ $pw->judul }}</h6>
                 </div>
@@ -29,13 +29,13 @@
     <div class="col-lg-3 col-md-4 col-6">
         <a href="/detail/{{ $pw->id }}" style="text-decoration: none">
             <div class="card">
-                <img src="{{ $pw->gambar }}" class="card-img-top" alt="Gambar">
+                <img src="{{ $pw->gambar }}" class="card-img-top" alt="{{ $pw->judul }}">
                 <div class="card-body p-4">
                     <h6 class="card-title">{{ $pw->judul }}</h6>
                 </div>
             </div>
             </a>
-        </div>
+    </div>
     @endforeach
 </div>
 </div>

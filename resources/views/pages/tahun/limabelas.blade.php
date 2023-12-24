@@ -9,7 +9,7 @@
             <div class="col-lg-3 col-md-4 col-6">
             <a href="/detail/{{ $m->id }}" style="text-decoration: none">
             <div class="card">
-                <img src="{{ $m->gambar }}" class="card-img-top" alt="Gambar">
+                <img src="{{ $m->gambar }}" class="card-img-top" alt="{{ $m->judul }}">
                 <div class="card-body p-3">
                     <h6 class="card-title">{{ $m->judul }}</h6>
                 </div>

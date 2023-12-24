@@ -26,8 +26,10 @@ return new class extends Migration
             $table->string('gambar');
             $table->string('trailer');
             $table->string('judul_inggris');
+            $table->text('link');
         });
     }
+
 
     /**
      * Reverse the migrations.
