@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h4><span id="currentDate"></span></h4>
+            <h4>Dashboard Page</h4>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

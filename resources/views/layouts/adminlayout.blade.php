@@ -21,12 +21,16 @@
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
+
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link"><span id="currentDate"></span></a>
       </li>
     </ul>
 
@@ -80,7 +84,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/list_anime" class="nav-link {{ request()->is('list_anime') ? 'active' : '' }}">
+          <a href="/list_anime" class="nav-link {{ request()->is('list_anime') || request()->is('anime/create') || request()->is('anime/edit/*') ? 'active' : '' }}">
               <i class="nav-icon fa fa-list"></i>
               <p>
                 List Anime
@@ -140,7 +144,7 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('dist/js/demo.js') }}"></script>
+<!-- <script src="{{ asset('dist/js/demo.js') }}"></script> -->
 
 <!-- Page specific script -->
 <script>

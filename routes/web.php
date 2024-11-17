@@ -89,3 +89,8 @@ Route::post('/req/store', [ReqAnimeController::class, 'store']);
 //admin
 Route::get('/adminsrvnt', [AdminSrvntController::class, 'index'])->name('adminsrvnt');
 Route::get('/list_anime', [AdminSrvntController::class, 'list'])->name('list');
+Route::get('/anime/create', [AdminSrvntController::class, 'create'])->name('anime.create');
+Route::post('/anime/store', [AdminSrvntController::class, 'store'])->name('anime.store');
+Route::get('/anime/edit/{id}', [AdminSrvntController::class, 'edit'])->name('anime.edit');
+Route::post('/anime/update/{id}', [AdminSrvntController::class, 'update'])->name('anime.update');
+Route::post('/anime/delete/{id}', [AdminSrvntController::class, 'destroy'])->name('anime.destroy');

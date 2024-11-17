@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h4><span id="currentDate"></span></h4>
+            <h4>List Anime</h4>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -40,7 +40,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <a class="btn btn-primary" href="/pegawai_bpd/tambah_bpd" role="button">Add Anime</a>
+          <a class="btn btn-primary" href="{{ route('anime.create') }}" role="button">Add Anime</a>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -66,12 +66,15 @@
                   <td>{{ $item->judul_inggris }}</td>
                   <td>{{ $item->score }}</td>
                   <td>{{ $item->episode }}</td>
-                  <td>{{ \Carbon\Carbon::createFromFormat('d/m/Y', $item->tgl_rilis)->format('j F Y') }}</td> <!-- Format date to '5 April 2009' -->
+                  <td>{{ $item->tgl_rilis }}</td> <!-- Format date to '5 April 2009' -->
                   <td>{{ str_replace(["[", "]", "'"], "", $item->genre) }}</td>
                   <td>{{ str_replace(["[", "]", "'"], "", $item->studio) }}</td>
                   <td>
-                    <a class="btn btn-warning" href="" role="button">Edit</a>
-                    <a class="btn btn-danger delete-btn" href="" role="button" data-id="{{}}">Hapus</a>
+                    <a class="btn btn-warning" href="{{ route('anime.edit', $item->id) }}" role="button">Edit</a>
+                    <form action="{{ route('anime.destroy', $item->id) }}" method="POST" style="display: inline;">
+        @csrf
+        <button type="submit" class="btn btn-danger delete-btn" onclick="return confirm('Are you sure you want to delete this anime?');">Hapus</button>
+    </form>
                   </td>
                 </tr>
                 @endforeach
