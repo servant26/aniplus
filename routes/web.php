@@ -9,6 +9,7 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\CariController;
 use App\Http\Controllers\StudioController;
 use App\Http\Controllers\ReqAnimeController;
+use App\Http\Controllers\AdminSrvntController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,5 +81,11 @@ Route::get('/detail/{id}', [DetailController::class, 'detail']);
 
 //cari
 Route::get('/cari', [CariController::class, 'cari']);
+
+//request
 Route::get('/req', [ReqAnimeController::class, 'index']);
 Route::post('/req/store', [ReqAnimeController::class, 'store']);
+
+//admin
+Route::get('/adminsrvnt', [AdminSrvntController::class, 'index'])->name('adminsrvnt');
+Route::get('/list_anime', [AdminSrvntController::class, 'list'])->name('list');
