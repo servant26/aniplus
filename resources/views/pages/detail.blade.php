@@ -7,10 +7,13 @@
     <div class="p-3 mb-4 rounded bg-dark text-white">{{ $t->judul }}</div>
     <div class="row g-4 m-4">
         @if($t->trailer)
-            <iframe src="{{ str_replace('watch?v=', 'embed/', $t->trailer) }}" frameborder="0" height="500" allowfullscreen></iframe><br>
+            <!-- Wrapper untuk video -->
+            <div class="video-wrapper">
+                <iframe src="{{ str_replace('watch?v=', 'embed/', $t->trailer) }}" frameborder="0" allowfullscreen></iframe>
+            </div><br>
         @endif
         <div class="container col-12">
-        <h5 class="mt-5">Deskripsi Anime :</h5>
+        <h5 class="mt-4">Deskripsi Anime :</h5>
         <table class="table" style="width: 80%">
             <tr>
                 <td>Judul Anime</td>

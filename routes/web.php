@@ -8,6 +8,7 @@ use App\Http\Controllers\TahunController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\CariController;
 use App\Http\Controllers\StudioController;
+use App\Http\Controllers\ReqAnimeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,3 +80,5 @@ Route::get('/detail/{id}', [DetailController::class, 'detail']);
 
 //cari
 Route::get('/cari', [CariController::class, 'cari']);
+Route::get('/req', [ReqAnimeController::class, 'index']);
+Route::post('/req/store', [ReqAnimeController::class, 'store']);

@@ -8,6 +8,20 @@
     <link href="{{ asset('bt\css\bootstrap.min.css') }}" rel="stylesheet">
     <script src="{{ asset('bt\js\bootstrap.bundle.min.js') }}"></script>
     <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .container-fluid.p-4.bg-dark {
+      margin-top: auto; /* Menambahkan margin atas otomatis untuk footer */
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Menyebarkan konten secara vertikal */
+    }
     .card-img-top {
         height: 300px; 
         object-fit: cover; 
@@ -17,6 +31,8 @@
         overflow: hidden;
         position: relative;
         transition: transform 0.3s ease;
+        margin-left: 4%; /* Memberikan margin di sebelah kiri */
+        margin-right: 4%; /* Memberikan margin di sebelah kanan */
     }
 
     .card:hover {
@@ -26,7 +42,70 @@
     .card-img-top {
         object-fit: cover;
     }
-    
+    .card-body {
+        position: relative;
+        padding: 0;
+    }
+    .card-body h6 {
+        position: absolute;
+        bottom: 30px; /* Menyesuaikan posisi teks sedikit lebih tinggi */
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: white;
+        color: transparent;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        transition: color 0.3s ease, opacity 0.5s ease, transform 0.3s ease;
+        opacity: 0;
+        transform: rotate(-1deg); /* Memberikan rotasi sedikit untuk efek miring */
+        transform-origin: center; /* Memastikan rotasi terjadi di tengah */
+    }
+
+    .card:hover .card-body h6 {
+        color: black; /* Teks menjadi hitam ketika di-hover */
+        opacity: 1; /* Teks muncul dengan transisi */
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            height: 200px; /* Mengurangi tinggi card pada perangkat dengan layar kecil */
+        }
+
+        .card-body h6 {
+            font-size: 14px; /* Menurunkan ukuran font judul pada mobile */
+            padding: 8px; /* Mengurangi padding di card-body */
+        }
+        .rampung{
+          margin-left: 5%;
+          margin-right: 5%;
+        }
+    }
+    /* Wrapper video responsif */
+    .video-wrapper {
+        position: relative;
+        padding-top: 56.25%; /* Rasio 16:9 = 9 / 16 = 0.5625 = 56.25% */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Untuk perangkat dengan layar lebih kecil (misalnya mobile) */
+    @media (max-width: 768px) {
+        .video-wrapper {
+            padding-top: 66.25%; /* Tetap pertahankan rasio 16:9 */
+        }
+    }
     </style>
 </head>
 <body>
@@ -129,6 +208,9 @@
               <li><a class="dropdown-item" href="/tahun/90">90-an kebawah</a></li>
             </ul>
           </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link {{ request()->is('req') ? 'active' : '' }}" href="/req">Req Anime</a>
+          </li>
       </ul>
       <form class="d-flex" role="search" action="/cari" method="get">
         <input class="form-control me-2" type="search" name="cari" placeholder="Cari anime..." aria-label="Cari materi..." required>
@@ -154,4 +236,5 @@
   </div>
 <!--Akhir Footer-->
 </body>
+@yield('js')
 </html>

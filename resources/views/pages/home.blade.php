@@ -12,12 +12,12 @@
         <a href="/detail/{{ $pw->id }}" style="text-decoration: none">
             <div class="card">
                 <img src="{{ $pw->gambar }}" class="card-img-top" alt="{{ $pw->judul }}">
-                <div class="card-body p-3">
+                <div class="card-body">
                     <h6 class="card-title">{{ $pw->judul }}</h6>
                 </div>
             </div>
-            </a>
-        </div>
+        </a>
+    </div>
     @endforeach
 </div>
 
@@ -30,11 +30,11 @@
         <a href="/detail/{{ $pw->id }}" style="text-decoration: none">
             <div class="card">
                 <img src="{{ $pw->gambar }}" class="card-img-top" alt="{{ $pw->judul }}">
-                <div class="card-body p-4">
+                <div class="card-body">
                     <h6 class="card-title">{{ $pw->judul }}</h6>
                 </div>
             </div>
-            </a>
+        </a>
     </div>
     @endforeach
 </div>
