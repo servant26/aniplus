@@ -113,7 +113,7 @@
 <!--Awal Navbar-->
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
   <div class="container-fluid m-2">
-    <a class="navbar-brand" href="">Aniplus</a>
+    <a class="navbar-brand" href="javascript:void(0);" ondblclick="window.location.href='http://aniplus.infinityfreeapp.com/anime_list';">Aniplus</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

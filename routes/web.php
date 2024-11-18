@@ -10,6 +10,8 @@ use App\Http\Controllers\CariController;
 use App\Http\Controllers\StudioController;
 use App\Http\Controllers\ReqAnimeController;
 use App\Http\Controllers\AdminSrvntController;
+use App\Http\Controllers\AuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -86,11 +88,20 @@ Route::get('/cari', [CariController::class, 'cari']);
 Route::get('/req', [ReqAnimeController::class, 'index']);
 Route::post('/req/store', [ReqAnimeController::class, 'store']);
 
-//admin
-Route::get('/adminsrvnt', [AdminSrvntController::class, 'index'])->name('adminsrvnt');
-Route::get('/list_anime', [AdminSrvntController::class, 'list'])->name('list');
-Route::get('/anime/create', [AdminSrvntController::class, 'create'])->name('anime.create');
-Route::post('/anime/store', [AdminSrvntController::class, 'store'])->name('anime.store');
-Route::get('/anime/edit/{id}', [AdminSrvntController::class, 'edit'])->name('anime.edit');
-Route::post('/anime/update/{id}', [AdminSrvntController::class, 'update'])->name('anime.update');
-Route::post('/anime/delete/{id}', [AdminSrvntController::class, 'destroy'])->name('anime.destroy');
+Route::middleware('admin')->group(function () {
+    Route::get('/adminsrvnt', [AdminSrvntController::class, 'index'])->name('adminsrvnt');
+    Route::get('/list_anime', [AdminSrvntController::class, 'list'])->name('list');
+    Route::get('/anime/create', [AdminSrvntController::class, 'create'])->name('anime.create');
+    Route::post('/anime/store', [AdminSrvntController::class, 'store'])->name('anime.store');
+    Route::get('/anime/edit/{id}', [AdminSrvntController::class, 'edit'])->name('anime.edit');
+    Route::post('/anime/update/{id}', [AdminSrvntController::class, 'update'])->name('anime.update');
+    Route::post('/anime/delete/{id}', [AdminSrvntController::class, 'destroy'])->name('anime.destroy');
+});
+
+
+//login
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
