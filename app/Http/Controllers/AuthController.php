@@ -29,13 +29,13 @@ class AuthController extends Controller
             return redirect()->route('adminsrvnt');
         }
 
-        return back()->withErrors(['loginError' => 'Username atau password salah']);
+        return back()->withErrors(['loginError' => 'Incorrect username or password']);
     }
     
     public function logout()
     {
         Session::forget('admin'); // Hapus sesi admin
-        return redirect()->route('login')->with('success', 'Anda berhasil logout.');
+        return redirect()->route('login')->with('success', 'You have successfully logged out.');
     }
     
 }

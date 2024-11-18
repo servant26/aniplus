@@ -86,11 +86,11 @@
             </tr>
         </table><br><br>
         <h5>Sinopsis Anime :</h5> 
-        <p style="text-align: justify">Anime yang berjudul <b>{{ $t->judul }}</b>, ini merupakan sebuah anime yang telah
-            diproduksi oleh studio <b>{{ str_replace(["[", "]", "'"], "", $t->studio) }}</b>, dengan genre utamanya
-            adalah <b>{{ str_replace(["[", "]", "'"], "", $t->genre) }}</b>. Anime ini menghadirkan kisah yang 
-            mengagumkan melalui total <b>{{ $t->episode }}</b> episode yang tayang, dan berhasil mencuri perhatian 
-            penonton dengan rating yang mencapai <b>{{ $t->score }}</b>. Tepat pada tanggal 
+        <p style="text-align: justify">Anime yang berjudul {{ $t->judul }}, ini merupakan sebuah anime yang telah
+            diproduksi oleh studio{{ str_replace(["[", "]", "'"], "", $t->studio) }}, dengan genre utamanya
+            adalah {{ str_replace(["[", "]", "'"], "", $t->genre) }}. Anime ini menghadirkan kisah yang 
+            mengagumkan melalui total {{ $t->episode }} episode yang tayang, dan berhasil mencuri perhatian 
+            penonton dengan rating yang mencapai {{ $t->score }}. Tepat pada tanggal 
             @php
                 $tanggal = $t->tgl_rilis;
                 $tgl_parts = explode('/', $tanggal);
@@ -113,12 +113,12 @@
                 }
             @endphp
             @if(isset($new_date))
-                <b>{{ $new_date }}</b>
+                {{ $new_date }}
             @else
                 {{ $tanggal }}
             @endif        
             anime ini pertama kali dirilis untuk disaksikan oleh para penggemarnya. Dengan jalan cerita yang mendebarkan,
-            aksi yang seru, dan sentuhan dramatis yang memukau, <b>{{ $t->judul }}</b> telah menjadi salah satu anime
+            aksi yang seru, dan sentuhan dramatis yang memukau, {{ $t->judul }} telah menjadi salah satu anime
             paling populer dan diakui dalam industri hiburan Jepang maupun di seluruh dunia. Kehadirannya telah
             menginspirasi banyak orang dan menciptakan ikon-ikon tak terlupakan, menjadikannya sebagai salah satu karya
             paling berpengaruh dalam sejarah dunia animasi.</p><br>

@@ -100,7 +100,7 @@ Route::middleware('admin')->group(function () {
 
 
 //login
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::get('/loginsrvnt', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 

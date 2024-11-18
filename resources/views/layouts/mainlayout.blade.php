@@ -113,7 +113,7 @@
 <!--Awal Navbar-->
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
   <div class="container-fluid m-2">
-    <a class="navbar-brand" href="javascript:void(0);" ondblclick="window.location.href='http://aniplus.infinityfreeapp.com/anime_list';">Aniplus</a>
+    <a class="navbar-brand" href="javascript:void(0);" ondblclick="window.location.href='/loginsrvnt'">Aniplus</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -225,16 +225,18 @@
 
 <!--Awal Footer-->
 <div class="container-fluid p-4 bg-dark">
-    <h4 class="text-white">Follow Sosial Media Kami</h4>
+    <h4 class="text-white">Aniplus</h4>
     <div class="d-flex justify-content-start">
-      <a href="https://www.facebook.com/otaku.art.35" target="_blank"><img src="{{ asset('gambar/facebook.png') }}" height="30px"></a>
-      <a href="https://www.instagram.com/servant_arthur07/" target="_blank"><img src="{{ asset('gambar/instagram.png') }}" height="30px"></a>
-      <a href="https://www.tiktok.com/@servant_arthur07" target="_blank"><img src="{{ asset('gambar/tiktok.png') }}" height="30px"></a>
-      <a href="https://www.youtube.com/@alikhatami3910" target="_blank"><img src="{{ asset('gambar/youtube.png') }}" height="30px"></a>
-      <a href="https://github.com/servant26" target="_blank"><img src="{{ asset('gambar/github.png') }}" height="30px"></a>
+        <p class="text-white"><span id="currentYear"></span> A.K.</p>
     </div>
-  </div>
+</div>
 <!--Akhir Footer-->
 </body>
 @yield('js')
+<script>
+    // Mengambil elemen dengan id 'currentYear'
+    const yearElement = document.getElementById('currentYear');
+    // Mengatur tahun saat ini ke dalam elemen
+    yearElement.textContent = new Date().getFullYear();
+</script>
 </html>

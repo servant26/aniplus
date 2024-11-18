@@ -114,7 +114,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; <a href="#">Srvnt07</a>.</strong> All rights reserved.
+    <p class="text-white"><span id="currentYear"></span> A.K.</p>
   </footer>
 
   <!-- Control Sidebar -->
@@ -219,6 +219,11 @@ const date = today.toLocaleDateString('id-ID', {
 
 // Menampilkan hari dan tanggal
 document.getElementById("currentDate").textContent = `${dayName}, ${date}`;
+
+// Mengambil elemen dengan id 'currentYear'
+const yearElement = document.getElementById('currentYear');
+// Mengatur tahun saat ini ke dalam elemen
+yearElement.textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
