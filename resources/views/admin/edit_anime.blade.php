@@ -58,11 +58,18 @@
                 <label>Studio</label>
                 <select name="studio" class="form-control">
                     <option value="" disabled>Select Studio</option>
-                    @foreach($studios as $studio)
-                        <option value="{{ $studio }}" {{ $anime->studio == $studio ? 'selected' : '' }}>
-                            {{ ucwords(str_replace(["[", "]", "'"], "", $studio)) }}
-                        </option>
-                    @endforeach
+                    <option value="A-1 Pictures" {{ $anime->studio == 'A-1 Pictures' ? 'selected' : '' }}>A-1 Pictures</option>
+                    <option value="Bones" {{ $anime->studio == 'Bones' ? 'selected' : '' }}>Bones</option>
+                    <option value="CoMix Wave Films" {{ $anime->studio == 'CoMix Wave Films' ? 'selected' : '' }}>CoMix Wave Films</option>
+                    <option value="David Production" {{ $anime->studio == 'David Production' ? 'selected' : '' }}>David Production</option>
+                    <option value="Kyoto Animation" {{ $anime->studio == 'Kyoto Animation' ? 'selected' : '' }}>Kyoto Animation</option>
+                    <option value="Madhouse" {{ $anime->studio == 'Madhouse' ? 'selected' : '' }}>Madhouse</option>
+                    <option value="Mappa" {{ $anime->studio == 'Mappa' ? 'selected' : '' }}>Mappa</option>
+                    <option value="Production I.G" {{ $anime->studio == 'Production I.G' ? 'selected' : '' }}>Production I.G</option>
+                    <option value="Studio Ghibli" {{ $anime->studio == 'Studio Ghibli' ? 'selected' : '' }}>Studio Ghibli</option>
+                    <option value="Ufotable" {{ $anime->studio == 'Ufotable' ? 'selected' : '' }}>Ufotable</option>
+                    <option value="White Fox" {{ $anime->studio == 'White Fox' ? 'selected' : '' }}>White Fox</option>
+                    <option value="Wit Studio" {{ $anime->studio == 'Wit Studio' ? 'selected' : '' }}>Wit Studio</option>
                     <option value="Other" {{ $anime->studio == 'Other' ? 'selected' : '' }}>Other</option>
                 </select>
             </div>

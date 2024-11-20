@@ -53,13 +53,21 @@
             <label>Studio</label>
             <select name="studio" class="form-control" required>
                 <option value="" disabled selected>Select Studio</option>
-                @foreach($studios as $studio)
-                    <option value="{{ $studio }}">{{ ucwords(str_replace(["[", "]", "'"], "", $studio)) }}</option>
-                @endforeach
-                <option value="Other">Other</option> <!-- Menambahkan "Other" di bawah daftar studio -->
+                <option value="A-1 Pictures">A-1 Pictures</option>
+                <option value="Bones">Bones</option>
+                <option value="CoMix Wave Films">CoMix Wave Films</option>
+                <option value="David Production">David Production</option>
+                <option value="Kyoto Animation">Kyoto Animation</option>
+                <option value="Madhouse">Madhouse</option>
+                <option value="Mappa">Mappa</option>
+                <option value="Production I.G">Production I.G</option>
+                <option value="Studio Ghibli">Studio Ghibli</option>
+                <option value="Ufotable">Ufotable</option>
+                <option value="White Fox">White Fox</option>
+                <option value="Wit Studio">Wit Studio</option>
+                <option value="Other">Other</option> <!-- Menambahkan "Other" -->
             </select>
         </div>
-
         <!-- Input untuk studio lain jika memilih "Other" -->
         <div class="form-group" id="otherStudioInput" style="display:none;">
             <label>Other Studio</label>

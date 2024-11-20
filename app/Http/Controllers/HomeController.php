@@ -11,11 +11,13 @@ class HomeController extends Controller
     {
         $type1 = DB::table('aniplus')
                 ->where('tipe', 'tv')
+                ->orderBy('score', 'desc')
                 ->take(4)
                 ->get();
     
         $type2 = DB::table('aniplus')
                 ->where('tipe', 'movie')
+                ->orderBy('score', 'desc')
                 ->take(4) 
                 ->get();
     

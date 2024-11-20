@@ -9,6 +9,7 @@ class TahunController extends Controller
     public function duaempat(){
         $duatiga = DB::table('aniplus')
             ->whereRaw("STR_TO_DATE(tgl_rilis, '%d/%m/%Y') BETWEEN '2021-01-01' AND '2024-12-31'")
+            ->orderBy('score', 'desc')
             ->paginate(8);
         return view("pages.tahun.duatiga", ["duatiga" => $duatiga]);
     }
@@ -16,6 +17,7 @@ class TahunController extends Controller
     public function duapuluh(){
         $duapuluh = DB::table('aniplus')
             ->whereRaw("STR_TO_DATE(tgl_rilis, '%d/%m/%Y') BETWEEN '2016-01-01' AND '2020-12-31'")
+            ->orderBy('score', 'desc')
             ->paginate(8);
         return view("pages.tahun.duapuluh", ["duapuluh" => $duapuluh]);
     }
@@ -23,6 +25,7 @@ class TahunController extends Controller
     public function limabelas(){
         $limabelas = DB::table('aniplus')
             ->whereRaw("STR_TO_DATE(tgl_rilis, '%d/%m/%Y') BETWEEN '2011-01-01' AND '2015-12-31'")
+            ->orderBy('score', 'desc')
             ->paginate(8);
         return view("pages.tahun.limabelas", ["limabelas" => $limabelas]);
     }
@@ -30,6 +33,7 @@ class TahunController extends Controller
     public function sepuluh(){
         $sepuluh = DB::table('aniplus')
             ->whereRaw("STR_TO_DATE(tgl_rilis, '%d/%m/%Y') BETWEEN '2006-01-01' AND '2010-12-31'")
+            ->orderBy('score', 'desc')
             ->paginate(8);
         return view("pages.tahun.sepuluh", ["sepuluh" => $sepuluh]);
     }
@@ -37,6 +41,7 @@ class TahunController extends Controller
     public function empat(){
         $empat = DB::table('aniplus')
             ->whereRaw("STR_TO_DATE(tgl_rilis, '%d/%m/%Y') BETWEEN '2000-01-01' AND '2005-12-31'")
+            ->orderBy('score', 'desc')
             ->paginate(8);
         return view("pages.tahun.empat", ["empat" => $empat]);
     }
@@ -44,6 +49,7 @@ class TahunController extends Controller
     public function sembilanpuluh(){
         $sembilanpuluh = DB::table('aniplus')
             ->whereRaw("STR_TO_DATE(tgl_rilis, '%d/%m/%Y') BETWEEN '1980-01-01' AND '1999-12-31'")
+            ->orderBy('score', 'desc')
             ->paginate(8);
         return view("pages.tahun.sembilanpuluh", ["sembilanpuluh" => $sembilanpuluh]);
     }

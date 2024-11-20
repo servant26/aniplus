@@ -21,6 +21,7 @@ class AdminSrvntController extends Controller
     {
         // Ambil data dari tabel req
         $data = DB::table('aniplus')
+        ->orderBy('score', 'desc')
         ->get();
         return view('admin.list_anime', compact('data'));
     }
@@ -28,19 +29,20 @@ class AdminSrvntController extends Controller
     public function create()
     {
         $types = DB::table('aniplus')->distinct()->pluck('tipe');
-        $seasons = DB::table('aniplus')->distinct()->pluck('season');
-        $studios = DB::table('aniplus')->distinct()->pluck('studio')->sort();
+        $seasons = DB::table('aniplus')->distinct()->pluck('season')->sort();
     
-        return view('admin.create_anime', compact('types', 'seasons', 'studios'));
+        return view('admin.create_anime', compact('types', 'seasons'));
     }
+    
     
     public function store(Request $request)
     {
         $studio = $request->studio;
 
         if ($studio == 'Other') {
-            $studio = $request->other_studio; // Mengambil nilai dari input 'other_studio'
+            $studio = $request->other_studio;
         }
+        
         $tgl_rilis = Carbon::createFromFormat('Y-m-d', $request->tgl_rilis)->format('d/m/Y');
 
         DB::table('aniplus')->insert([
@@ -65,11 +67,11 @@ class AdminSrvntController extends Controller
     {
         $anime = DB::table('aniplus')->where('id', $id)->first();
         $types = DB::table('aniplus')->distinct()->pluck('tipe');
-        $seasons = DB::table('aniplus')->distinct()->pluck('season');
-        $studios = DB::table('aniplus')->distinct()->pluck('studio')->sort();
-        
-        return view('admin.edit_anime', compact('anime', 'types', 'seasons', 'studios'));
+        $seasons = DB::table('aniplus')->distinct()->pluck('season')->sort();
+    
+        return view('admin.edit_anime', compact('anime', 'types', 'seasons'));
     }
+    
     
     public function update(Request $request, $id)
     {
