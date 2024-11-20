@@ -89,4 +89,11 @@ class StudioController extends Controller
             ->paginate(8);
         return view("pages.studio.witstudio", ["witstudio" => $witstudio]);
     }
+
+    public function other(){
+        $other = DB::table('aniplus')
+            ->where('studio', 'LIKE', '%Other%') 
+            ->paginate(8);
+        return view("pages.studio.other", ["other" => $other]);
+    }
 }

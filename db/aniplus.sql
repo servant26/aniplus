@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2023 at 04:06 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Waktu pembuatan: 18 Nov 2024 pada 15.43
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aniplus`
+-- Struktur dari tabel `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `admins`
+--
+
+INSERT INTO `admins` (`id`, `username`, `password`, `created_at`, `updated_at`) VALUES
+(1, 'srvnt07', '$2y$10$U2jUslXENjCBgdxKTfsx4u76IjmeA5cH9W2HuHgDf1xK5W1sFgsee', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `aniplus`
 --
 
 CREATE TABLE `aniplus` (
@@ -44,7 +65,7 @@ CREATE TABLE `aniplus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `aniplus`
+-- Dumping data untuk tabel `aniplus`
 --
 
 INSERT INTO `aniplus` (`id`, `judul`, `tipe`, `score`, `episode`, `tgl_rilis`, `season`, `genre`, `studio`, `gambar`, `trailer`, `judul_inggris`, `link`) VALUES
@@ -239,15 +260,12 @@ INSERT INTO `aniplus` (`id`, `judul`, `tipe`, `score`, `episode`, `tgl_rilis`, `
 (188, 'Takanashi Rikka Kai: Chuunibyou demo Koi ga Shitai! Movie', 'movie', 7.38, 1, '14/09/2013', 'summer', '[\'Comedy\', \'Romance\']', '[\'Kyoto Animation\']', 'https://cdn.myanimelist.net/images/anime/2/56167l.jpg', 'https://www.youtube.com/watch?v=l05gqLlYq8w', 'Love, Chunibyo & Other Delusions!: Rikka Version', 'https://acefile.co/f/69739768/wibudesu-gadis-suka-berkhayal-trk-720p-rar'),
 (189, 'Sword Art Online', 'tv', 7.02, 25, '08/07/2012', 'summer', '[\'Action\', \'Adventure\', \'Fantasy\', \'Romance\']', '[\'A-1 Pictures\']', 'https://cdn.myanimelist.net/images/anime/11/39717l.jpg', 'https://www.youtube.com/watch?v=6ohYYtxfDCg', 'Sword Art Online', 'https://acefile.co/f/15572016/otakudesu_sao_720p-rar'),
 (190, 'Sword Art Online Alternative: Gun Gale Online', 'tv', 7.01, 12, '08/04/2018', 'spring', '[\'Action\']', '[\'Studio 3Hz\']', 'https://cdn.myanimelist.net/images/anime/1141/93288.jpg', 'https://www.youtube.com/watch?v=ZoEtBn_6KOI', 'Sword Art Online Alternative: Gun Gale Online', 'https://acefile.co/f/15573147/otakudesu_saoalt_720p-rar'),
-(191, 'Sword Art Online II', 'tv', 6.07, 24, '05/07/2014', 'summer', '[\'Action\', \'Adventure\', \'Fantasy\', \'Romance\']', '[\'A-1 Pictures\']', 'https://cdn.myanimelist.net/images/anime/1223/121999l.jpg', 'https://www.youtube.com/watch?v=tdvsWRjh224', 'Sword Art Online II', 'https://acefile.co/f/15573560/otakudesu_sao-s2_720p-rar'),
-(206, '', '', 0.00, 0, '', '', '', '', '', '', '', ''),
-(207, '', '', 0.00, 0, '', '', '', '', '', '', '', ''),
-(208, '', '', 0.00, 0, '', '', '', '', '', '', '', '');
+(191, 'Sword Art Online II', 'tv', 6.07, 24, '05/07/2014', 'summer', '[\'Action\', \'Adventure\', \'Fantasy\', \'Romance\']', '[\'A-1 Pictures\']', 'https://cdn.myanimelist.net/images/anime/1223/121999l.jpg', 'https://www.youtube.com/watch?v=tdvsWRjh224', 'Sword Art Online II', 'https://acefile.co/f/15573560/otakudesu_sao-s2_720p-rar');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -257,17 +275,20 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (33, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(34, '2023_11_26_145051_create_anipluses_table', 1);
+(34, '2023_11_26_145051_create_anipluses_table', 1),
+(35, '2024_11_17_074025_create_req_table', 2),
+(36, '2024_11_17_162634_create_admins_table', 3),
+(37, '2024_11_18_010333_create_admins_table', 4);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Struktur dari tabel `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -283,24 +304,75 @@ CREATE TABLE `personal_access_tokens` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `req`
+--
+
+CREATE TABLE `req` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `req`
+--
+
+INSERT INTO `req` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
+(6, 'awda', 'awda', '2024-11-16 23:52:44', '2024-11-16 23:52:44'),
+(7, 'awdwad', 'awdawdasasas', '2024-11-16 23:57:01', '2024-11-16 23:57:01'),
+(8, 'awd', 'awdawd', '2024-11-16 23:57:17', '2024-11-16 23:57:17'),
+(9, 'wada', 'awda', '2024-11-16 23:59:41', '2024-11-16 23:59:41'),
+(10, 'awda', 'awdwa', '2024-11-17 00:00:09', '2024-11-17 00:00:09'),
+(11, 'awda', 'awd', '2024-11-17 00:00:23', '2024-11-17 00:00:23'),
+(12, 'awdwadawd', 'awd', '2024-11-17 00:00:56', '2024-11-17 00:00:56'),
+(13, 'awdas', 'awdas', '2024-11-17 00:01:24', '2024-11-17 00:01:24'),
+(14, 'awdas', 'awdas', '2024-11-17 00:03:34', '2024-11-17 00:03:34'),
+(15, 'awd', 'awda', '2024-11-17 00:07:36', '2024-11-17 00:07:36'),
+(16, 'awdad', 'faf', '2024-11-17 00:07:54', '2024-11-17 00:07:54'),
+(17, 'awd', 'awd', '2024-11-17 00:08:27', '2024-11-17 00:08:27'),
+(18, 'awdad', 'awda', '2024-11-17 00:15:09', '2024-11-17 00:15:09'),
+(19, 'AOT', 'Tentang Titan', '2024-11-17 00:17:39', '2024-11-17 00:17:39'),
+(20, 'awdawd', 'awda', '2024-11-17 00:18:49', '2024-11-17 00:18:49'),
+(21, 'adaot', 'awda', '2024-11-17 00:22:22', '2024-11-17 00:22:22'),
+(22, 'awdad', 'awf', '2024-11-17 00:26:21', '2024-11-17 00:26:21'),
+(23, 'aot', 'awd', '2024-11-17 00:26:32', '2024-11-17 00:26:32'),
+(24, 'KNY', 'ASKJAKSJ', '2024-11-17 00:30:45', '2024-11-17 00:30:45'),
+(25, 'ASAS', 'ASAS', '2024-11-17 00:31:16', '2024-11-17 00:31:16'),
+(26, 'asa', 's', '2024-11-17 00:32:45', '2024-11-17 00:32:45'),
+(27, 'High School DxDa', 'wd', '2024-11-17 00:36:28', '2024-11-17 00:36:28'),
+(28, 'awdaaa', 'wd', '2024-11-17 00:36:59', '2024-11-17 00:36:59'),
+(29, 'Attack On Titan', 'tentan titan gitu kak', '2024-11-17 17:32:23', '2024-11-17 17:32:23');
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `aniplus`
+-- Indeks untuk tabel `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `admins_username_unique` (`username`);
+
+--
+-- Indeks untuk tabel `aniplus`
 --
 ALTER TABLE `aniplus`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Indeks untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -308,26 +380,44 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indeks untuk tabel `req`
+--
+ALTER TABLE `req`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `aniplus`
+-- AUTO_INCREMENT untuk tabel `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `aniplus`
 --
 ALTER TABLE `aniplus`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=209;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `req`
+--
+ALTER TABLE `req`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

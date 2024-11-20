@@ -56,7 +56,14 @@
                 @foreach($studios as $studio)
                     <option value="{{ $studio }}">{{ ucwords(str_replace(["[", "]", "'"], "", $studio)) }}</option>
                 @endforeach
+                <option value="Other">Other</option> <!-- Menambahkan "Other" di bawah daftar studio -->
             </select>
+        </div>
+
+        <!-- Input untuk studio lain jika memilih "Other" -->
+        <div class="form-group" id="otherStudioInput" style="display:none;">
+            <label>Other Studio</label>
+            <input type="text" name="other_studio" class="form-control" placeholder="Enter other studio">
         </div>
         <div class="form-group">
             <label>Image</label>
@@ -70,6 +77,7 @@
             <label>Link</label>
             <input type="url" name="link" class="form-control" required placeholder="Enter official link">
         </div>
+        <a class="btn btn-danger" href="/list_anime" role="button">Back</a>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <br><br>

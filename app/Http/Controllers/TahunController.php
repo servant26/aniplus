@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class TahunController extends Controller
 {
-    public function duatiga(){
+    public function duaempat(){
         $duatiga = DB::table('aniplus')
-            ->whereRaw("STR_TO_DATE(tgl_rilis, '%d/%m/%Y') BETWEEN '2021-01-01' AND '2023-12-31'")
+            ->whereRaw("STR_TO_DATE(tgl_rilis, '%d/%m/%Y') BETWEEN '2021-01-01' AND '2024-12-31'")
             ->paginate(8);
         return view("pages.tahun.duatiga", ["duatiga" => $duatiga]);
     }

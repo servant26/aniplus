@@ -158,6 +158,8 @@
             <li><a class="dropdown-item" href="/genre/sports">Sports</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/genre/supernatural">Supernatural</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/genre/other">Other</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown mx-3">
@@ -188,14 +190,16 @@
               <li><a class="dropdown-item" href="/studio/whitefox">White Fox</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/studio/witstudio">Wit Studio</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/studio/other">Other</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown mx-3">
-            <a class="nav-link dropdown-toggle {{ request()->is('tahun/23','tahun/20','tahun/15','tahun/10','tahun/04','tahun/90') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle {{ request()->is('tahun/24','tahun/20','tahun/15','tahun/10','tahun/04','tahun/90') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Tahun
             </a>
             <ul class="dropdown-menu scrollable-menu">
-              <li><a class="dropdown-item" href="/tahun/23">2021-2023</a></li>
+              <li><a class="dropdown-item" href="/tahun/24">2021-2024</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/tahun/20">2016-2020</a></li>
               <li><hr class="dropdown-divider"></li>
@@ -205,11 +209,11 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/tahun/04">2000-2005</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/tahun/90">90-an kebawah</a></li>
+              <li><a class="dropdown-item" href="/tahun/90">Anime 90-an</a></li>
             </ul>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link {{ request()->is('req') ? 'active' : '' }}" href="/req">Req Anime</a>
+            <a class="nav-link {{ request()->is('req') ? 'active' : '' }}" href="/req">Request Anime</a>
           </li>
       </ul>
       <form class="d-flex" role="search" action="/cari" method="get">

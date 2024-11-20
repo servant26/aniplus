@@ -19,9 +19,11 @@
             <div class="form-group">
                 <label>Type</label>
                 <select name="tipe" class="form-control" required>
-                    <option value="" disabled selected>Select Type</option>
+                    <option value="" disabled>Select Type</option>
                     @foreach($types as $type)
-                        <option value="{{ $type }}">{{ ucwords(str_replace(["[", "]", "'"], "", $type)) }}</option>
+                        <option value="{{ $type }}" {{ $anime->tipe == $type ? 'selected' : '' }}>
+                            {{ ucwords(str_replace(["[", "]", "'"], "", $type)) }}
+                        </option>
                     @endforeach
                 </select>
             </div>
@@ -35,14 +37,16 @@
             </div>
             <div class="form-group">
                 <label>Release Date</label>
-                <input type="date" name="tgl_rilis" class="form-control" value="{{ $anime->tgl_rilis }}">
+                <input type="text" name="tgl_rilis" class="form-control" value="{{ $anime->tgl_rilis }}">
             </div>
             <div class="form-group">
                 <label>Season</label>
                 <select name="season" class="form-control">
-                    <option value="" disabled selected>Select Season</option>
+                    <option value="" disabled>Select Season</option>
                     @foreach($seasons as $season)
-                        <option value="{{ $season }}">{{ ucwords(str_replace(["[", "]", "'"], "", $season)) }}</option>
+                        <option value="{{ $season }}" {{ $anime->season == $season ? 'selected' : '' }}>
+                            {{ ucwords(str_replace(["[", "]", "'"], "", $season)) }}
+                        </option>
                     @endforeach
                 </select>
             </div>
@@ -53,10 +57,13 @@
             <div class="form-group">
                 <label>Studio</label>
                 <select name="studio" class="form-control">
-                    <option value="">Select Studio</option>
+                    <option value="" disabled>Select Studio</option>
                     @foreach($studios as $studio)
-                    <option value="{{ $studio }}">{{ ucwords(str_replace(["[", "]", "'"], "", $studio)) }}</option>
+                        <option value="{{ $studio }}" {{ $anime->studio == $studio ? 'selected' : '' }}>
+                            {{ ucwords(str_replace(["[", "]", "'"], "", $studio)) }}
+                        </option>
                     @endforeach
+                    <option value="Other" {{ $anime->studio == 'Other' ? 'selected' : '' }}>Other</option>
                 </select>
             </div>
             <div class="form-group">
@@ -71,6 +78,7 @@
                 <label>Link</label>
                 <input type="url" name="link" class="form-control" value="{{ $anime->link }}">
             </div>
+            <a class="btn btn-danger" href="/list_anime" role="button">Back</a>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
         <br><br>

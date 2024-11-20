@@ -66,11 +66,12 @@ Route::prefix('studio')->group(function () {
     Route::get('/ufotable', [StudioController::class, 'ufotable']);
     Route::get('/whitefox', [StudioController::class, 'whitefox']);
     Route::get('/witstudio', [StudioController::class, 'witstudio']);
+    Route::get('/other', [StudioController::class, 'other']);
 });
 
 //tahun
 Route::prefix('tahun')->group(function () {
-    Route::get('/23', [TahunController::class, 'duatiga']);
+    Route::get('/24', [TahunController::class, 'duaempat']);
     Route::get('/20', [TahunController::class, 'duapuluh']);
     Route::get('/15', [TahunController::class, 'limabelas']);
     Route::get('/10', [TahunController::class, 'sepuluh']);
