@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 class TahunController extends Controller
 {
     public function duaempat(){
-        $duatiga = DB::table('aniplus')
+        $duaempat = DB::table('aniplus')
             ->whereRaw("STR_TO_DATE(tgl_rilis, '%d/%m/%Y') BETWEEN '2021-01-01' AND '2024-12-31'")
             ->orderBy('score', 'desc')
             ->paginate(8);
-        return view("pages.tahun.duatiga", ["duatiga" => $duatiga]);
+        return view("pages.tahun.duaempat", ["duaempat" => $duaempat]);
     }
 
     public function duapuluh(){

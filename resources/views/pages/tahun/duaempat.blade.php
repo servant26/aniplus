@@ -3,9 +3,9 @@
 @section('content')
 <!-- Awal Card -->
 <div class="container mt-5 mb-5" id="card-materi">
-    <div class="p-3 mb-4 rounded bg-dark text-white">2021-2023</div>
+    <div class="p-3 mb-4 rounded bg-dark text-white">2021-2024</div>
     <div class="row g-4">
-        @foreach($duatiga as $m)
+        @foreach($duaempat as $m)
             <div class="col-lg-3 col-md-4 col-6">
             <a href="/detail/{{ $m->id }}" style="text-decoration: none">
             <div class="card">
@@ -23,20 +23,20 @@
 <!-- Awal Pagination --> 
 <div class="d-flex justify-content-center mb-5">
     <ul class="pagination">
-        @if ($duatiga->onFirstPage())
+        @if ($duaempat->onFirstPage())
             <li class="page-item disabled"><span class="page-link">Previous</span></li>
         @else
-            <li class="page-item"><a class="page-link" href="{{ $duatiga->previousPageUrl() }}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="{{ $duaempat->previousPageUrl() }}">Previous</a></li>
         @endif
         
-        @for ($i = max(1, $duatiga->currentPage() - 1); $i <= min($duatiga->lastPage(), $duatiga->currentPage() + 1); $i++)
-            <li class="page-item {{ $i == $duatiga->currentPage() ? 'active' : '' }}">
-                <a class="page-link" href="{{ $duatiga->url($i) }}">{{ $i }}</a>
+        @for ($i = max(1, $duaempat->currentPage() - 1); $i <= min($duaempat->lastPage(), $duaempat->currentPage() + 1); $i++)
+            <li class="page-item {{ $i == $duaempat->currentPage() ? 'active' : '' }}">
+                <a class="page-link" href="{{ $duaempat->url($i) }}">{{ $i }}</a>
             </li>
         @endfor
             
-        @if ($duatiga->hasMorePages())
-            <li class="page-item"><a class="page-link" href="{{ $duatiga->nextPageUrl() }}">Next</a></li>
+        @if ($duaempat->hasMorePages())
+            <li class="page-item"><a class="page-link" href="{{ $duaempat->nextPageUrl() }}">Next</a></li>
         @else
             <li class="page-item disabled"><span class="page-link">Next</span></li>
         @endif

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Nov 2024 pada 15.43
+-- Waktu pembuatan: 21 Nov 2024 pada 02.37
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -69,7 +69,7 @@ CREATE TABLE `aniplus` (
 --
 
 INSERT INTO `aniplus` (`id`, `judul`, `tipe`, `score`, `episode`, `tgl_rilis`, `season`, `genre`, `studio`, `gambar`, `trailer`, `judul_inggris`, `link`) VALUES
-(1, 'Fullmetal Alchemist: Brotherhood', 'tv', 9.10, 64, '05/04/2009', 'spring', '[\'Action\', \'Adventure\', \'Drama\', \'Fantasy\']', '[\'Bones\']', 'https://cdn.myanimelist.net/images/anime/1208/94745l.jpg', 'https://www.youtube.com/watch?v=--IcmZkvL0Q', 'Fullmetal Alchemist: Brotherhood', 'https://acefile.co/f/22400612/otakudesu_fma-brhd_01-32_720p-rar, https://acefile.co/f/22399159/otakudesu_fma-brhd_33-64_480p-rar'),
+(1, 'Fullmetal Alchemist: Brotherhood', 'tv', 9.10, 64, '5/04/2009', 'spring', 'Action, Adventure, Drama, Fantasy', 'Bones', 'https://cdn.myanimelist.net/images/anime/1208/94745l.jpg', 'https://www.youtube.com/watch?v=--IcmZkvL0Q', 'Fullmetal Alchemist: Brotherhood', 'https://acefile.co/f/22400612/otakudesu_fma-brhd_01-32_720p-rar, https://acefile.co/f/22399159/otakudesu_fma-brhd_33-64_480p-rar'),
 (2, 'Steins Gate', 'tv', 9.07, 24, '06/04/2011', 'spring', '[\'Drama\',\'Sci-Fi\',\'Suspense\']', '[\'White Fox\']', 'https://cdn.myanimelist.net/images/anime/1935/127974.jpg', 'https://www.youtube.com/watch?v=uMYhjVwp0Fk', 'Steins Gate', 'https://acefile.co/f/15634961/otakudesu_stgate_720p-rar'),
 (3, 'Shingeki no Kyojin Season 3 Part 2', 'tv', 9.05, 10, '29/04/2019', 'spring', '[\'Action\', \'Drama\']', '[\'Wit Studio\']', 'https://cdn.myanimelist.net/images/anime/1517/100633l.jpg', 'https://www.youtube.com/watch?v=hKHepjfj5Tw', 'Attack on Titan Season 3 Part 2', 'https://acefile.co/f/15706966/otakudesu_snk-s3_720p_p2-rar'),
 (4, 'Hunter x Hunter (2011)', 'tv', 9.04, 148, '02/10/2011', 'fall', '[\'Action\', \'Adventure\', \'Fantasy\']', '[\'Madhouse\']', 'https://cdn.myanimelist.net/images/anime/1337/99013l.jpg', 'https://www.youtube.com/watch?v=D9iTQRB4XRk', 'Hunter x Hunter', 'https://acefile.co/f/22025889/otakudesu_hntr-x-hntr_001-025_720p-rar, https://acefile.co/f/22029303/otakudesu_hntr-x-hntr_026-050_720p-rar, https://acefile.co/f/22041228/otakudesu_hntr-x-hntr_051-075_720p-rar, https://acefile.co/f/22043802/otakudesu_hntr-x-hntr_076-100_720p-rar, https://acefile.co/f/22047665/otakudesu_hntr-x-hntr_101-125_720p-rar, https://acefile.co/f/22049140/otakudesu_hntr-x-hntr_126-148_720p-rar'),
@@ -319,36 +319,6 @@ CREATE TABLE `req` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `req`
---
-
-INSERT INTO `req` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
-(6, 'awda', 'awda', '2024-11-16 23:52:44', '2024-11-16 23:52:44'),
-(7, 'awdwad', 'awdawdasasas', '2024-11-16 23:57:01', '2024-11-16 23:57:01'),
-(8, 'awd', 'awdawd', '2024-11-16 23:57:17', '2024-11-16 23:57:17'),
-(9, 'wada', 'awda', '2024-11-16 23:59:41', '2024-11-16 23:59:41'),
-(10, 'awda', 'awdwa', '2024-11-17 00:00:09', '2024-11-17 00:00:09'),
-(11, 'awda', 'awd', '2024-11-17 00:00:23', '2024-11-17 00:00:23'),
-(12, 'awdwadawd', 'awd', '2024-11-17 00:00:56', '2024-11-17 00:00:56'),
-(13, 'awdas', 'awdas', '2024-11-17 00:01:24', '2024-11-17 00:01:24'),
-(14, 'awdas', 'awdas', '2024-11-17 00:03:34', '2024-11-17 00:03:34'),
-(15, 'awd', 'awda', '2024-11-17 00:07:36', '2024-11-17 00:07:36'),
-(16, 'awdad', 'faf', '2024-11-17 00:07:54', '2024-11-17 00:07:54'),
-(17, 'awd', 'awd', '2024-11-17 00:08:27', '2024-11-17 00:08:27'),
-(18, 'awdad', 'awda', '2024-11-17 00:15:09', '2024-11-17 00:15:09'),
-(19, 'AOT', 'Tentang Titan', '2024-11-17 00:17:39', '2024-11-17 00:17:39'),
-(20, 'awdawd', 'awda', '2024-11-17 00:18:49', '2024-11-17 00:18:49'),
-(21, 'adaot', 'awda', '2024-11-17 00:22:22', '2024-11-17 00:22:22'),
-(22, 'awdad', 'awf', '2024-11-17 00:26:21', '2024-11-17 00:26:21'),
-(23, 'aot', 'awd', '2024-11-17 00:26:32', '2024-11-17 00:26:32'),
-(24, 'KNY', 'ASKJAKSJ', '2024-11-17 00:30:45', '2024-11-17 00:30:45'),
-(25, 'ASAS', 'ASAS', '2024-11-17 00:31:16', '2024-11-17 00:31:16'),
-(26, 'asa', 's', '2024-11-17 00:32:45', '2024-11-17 00:32:45'),
-(27, 'High School DxDa', 'wd', '2024-11-17 00:36:28', '2024-11-17 00:36:28'),
-(28, 'awdaaa', 'wd', '2024-11-17 00:36:59', '2024-11-17 00:36:59'),
-(29, 'Attack On Titan', 'tentan titan gitu kak', '2024-11-17 17:32:23', '2024-11-17 17:32:23');
-
---
 -- Indexes for dumped tables
 --
 
@@ -399,7 +369,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT untuk tabel `aniplus`
 --
 ALTER TABLE `aniplus`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
