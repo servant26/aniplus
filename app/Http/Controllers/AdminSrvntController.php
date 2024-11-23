@@ -17,6 +17,12 @@ class AdminSrvntController extends Controller
         return view('admin.dashboard', compact('data'));
     }
 
+    public function destroyreq($id)
+    {
+        DB::table('req')->where('id', $id)->delete();
+        return redirect()->route('adminsrvnt')->with('success', 'Req deleted successfully!');
+    }
+
     public function list()
     {
         // Ambil data dari tabel req

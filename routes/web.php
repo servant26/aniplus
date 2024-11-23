@@ -91,6 +91,7 @@ Route::post('/req/store', [ReqAnimeController::class, 'store']);
 
 Route::middleware('admin')->group(function () {
     Route::get('/adminsrvnt', [AdminSrvntController::class, 'index'])->name('adminsrvnt');
+    Route::post('/adminsrvnt/delete/{id}', [AdminSrvntController::class, 'destroyreq'])->name('adminsrvnt.destroyreq');
     Route::get('/list_anime', [AdminSrvntController::class, 'list'])->name('list');
     Route::get('/anime/create', [AdminSrvntController::class, 'create'])->name('anime.create');
     Route::post('/anime/store', [AdminSrvntController::class, 'store'])->name('anime.store');

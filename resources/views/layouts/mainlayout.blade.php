@@ -18,6 +18,7 @@
     }
 
     body {
+      padding-top: 5%;
       display: flex;
       flex-direction: column;
       justify-content: space-between; /* Menyebarkan konten secara vertikal */
@@ -68,7 +69,16 @@
         opacity: 1; /* Teks muncul dengan transisi */
     }
 
+    @media (max-width: 1023px) {
+        body {
+          padding-top: 10%;
+        }
+    }
+
     @media (max-width: 768px) {
+        body {
+          padding-top: 18%;
+        }
         .card {
             height: 200px; /* Mengurangi tinggi card pada perangkat dengan layar kecil */
         }
@@ -111,9 +121,12 @@
 <body>
 
 <!--Awal Navbar-->
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
   <div class="container-fluid m-2">
-    <a class="navbar-brand" href="javascript:void(0);" ondblclick="window.location.href='/loginsrvnt'">Aniplus</a>
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="{{ asset('gambar/icon.png') }}" alt="Icon" width="40" height="40" class="d-inline-block align-text-top me-2">
+    <span ondblclick="window.location.href='/loginsrvnt'">Aniplus</span>
+  </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -158,8 +171,6 @@
             <li><a class="dropdown-item" href="/genre/sports">Sports</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/genre/supernatural">Supernatural</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/genre/other">Other</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown mx-3">
@@ -229,9 +240,9 @@
 
 <!--Awal Footer-->
 <div class="container-fluid p-4 bg-dark">
-    <h4 class="text-white">Aniplus</h4>
+    <h5 class="text-white">Aniplus <span id="currentYear"></span></h5>
     <div class="d-flex justify-content-start">
-        <p class="text-white"><span id="currentYear"></span> A.K.</p>
+        <p style="font-size:14px" class="text-white">Terimakasih telah berkunjung</p>
     </div>
 </div>
 <!--Akhir Footer-->

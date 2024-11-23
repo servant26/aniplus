@@ -68,11 +68,6 @@
                 <option value="Other">Other</option> <!-- Menambahkan "Other" -->
             </select>
         </div>
-        <!-- Input untuk studio lain jika memilih "Other" -->
-        <div class="form-group" id="otherStudioInput" style="display:none;">
-            <label>Other Studio</label>
-            <input type="text" name="other_studio" class="form-control" placeholder="Enter other studio">
-        </div>
         <div class="form-group">
             <label>Image</label>
             <input type="url" name="gambar" class="form-control" required placeholder="Enter image URL">

@@ -72,9 +72,9 @@
                   <td>
                     <a class="btn btn-warning" href="{{ route('anime.edit', $item->id) }}" role="button">Edit</a>
                     <form action="{{ route('anime.destroy', $item->id) }}" method="POST" style="display: inline;">
-        @csrf
-        <button type="submit" class="btn btn-danger delete-btn" onclick="return confirm('Are you sure you want to delete this anime?');">Hapus</button>
-    </form>
+                      @csrf
+                    <button type="submit" class="btn btn-danger delete-btn" onclick="return confirm('Are you sure you want to delete this anime?');">Hapus</button>
+                    </form>
                   </td>
                 </tr>
                 @endforeach

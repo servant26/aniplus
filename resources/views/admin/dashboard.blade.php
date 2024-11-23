@@ -52,6 +52,7 @@
                     <th>Anime Name</th>
                     <th>Anime Description</th>
                     <th style="width: 18%;">Status</th>
+                    <th>Hapus</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,6 +67,12 @@
                             Belum Ditanggapi
                         </button>
                         </td>  
+                        <td>
+                          <form action="{{ route('adminsrvnt.destroyreq', $item->id) }}" method="POST" style="display: inline;">
+                            @csrf
+                          <button type="submit" class="btn btn-danger delete-btn" onclick="return confirm('Are you sure you want to delete this req?');">Hapus</button>
+                          </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
